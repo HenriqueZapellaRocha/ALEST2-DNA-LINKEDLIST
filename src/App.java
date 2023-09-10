@@ -6,7 +6,7 @@ import java.io.IOException;
 public class App {
     public static void main(String[] args) {
 
-        String filePath = "C:\\Users\\henri\\OneDrive\\Documentos\\ALEST2-DNA-LINKEDLIST-main\\casos-cohen\\caso30000k.txt";
+        String filePath = "/Users/henriquezapellarocha/Documents/ALEST2-DNA-LINKEDLIST-main/casos-cohen/caso10000k.txt";
         StringBuilder cadeia = new StringBuilder();
 
         try{
@@ -39,8 +39,7 @@ public class App {
 
         int tam = lista.nElementos();
         for(int i =0; i < tam -1; i++) {
-            lista.buscador();
-            
+            lista.buscador(lista.getPrimeiroElemento().getProximoNodo(), lista.getPrimeiroElemento());
         }
 
         System.out.println(lista.escritor());

@@ -37,7 +37,7 @@ public class LinkedList {
         nElementos++;
     }
 
-    public void remover(Nodo aSerRemovido) {
+    public void remover(Nodo aSerRemovido,Nodo anterior) {
 
 
     // se o a ser removido e o primeiro elemento da linkedlist
@@ -45,7 +45,7 @@ public class LinkedList {
         primeiroElemento = primeiroElemento.getProximoNodo();
     } else {
     // se o elemento a ser removido e o segundo
-        primeiroElemento.setProximoNodo(primeiroElemento.getProximoNodo().getProximoNodo());
+    anterior.setProximoNodo(aSerRemovido.getProximoNodo());
     }
 
 
@@ -67,13 +67,11 @@ public class LinkedList {
     */
     }
 
-    public void buscador() {
+    public void buscador(Nodo aux, Nodo anterior) {
 
-    
-    Nodo aux = primeiroElemento.getProximoNodo();
 
-    // diminui 1 da quantidade de caracteres seguidos
-    if(primeiroElemento != null && aux != null) {
+        for(int i =0; i < nElementos; i++) {
+              if((primeiroElemento != null && aux != null) && primeiroElemento.getCaractere() != aux.getCaractere() ) {
         //adiciona o caractere novo
         adicionar(fusao(this.primeiroElemento.getCaractere(), aux.getCaractere()));
         //diminui um da quantidade dos dois carcteres usados 
@@ -82,12 +80,42 @@ public class LinkedList {
         nElementos = nElementos -2;
         // remove os caracteres caso as suas quantidades sejam = 0
         if(primeiroElemento.getQuantidade() == 0){
-            remover(primeiroElemento);
+            remover(primeiroElemento, anterior);
         } 
         if(aux.getQuantidade() == 0) {
-            remover(aux);
+            remover(aux,anterior);
         }
+        break;
+    } else if (aux != null) {
+        anterior = aux;
+        aux = aux.getProximoNodo();
     }
+
+        }
+
+
+
+/* 
+    // diminui 1 da quantidade de caracteres seguidos
+    if((primeiroElemento != null && aux != null) && primeiroElemento.getCaractere() != aux.getCaractere() ) {
+        //adiciona o caractere novo
+        adicionar(fusao(this.primeiroElemento.getCaractere(), aux.getCaractere()));
+        //diminui um da quantidade dos dois carcteres usados 
+        primeiroElemento.setQuantidade(primeiroElemento.getQuantidade() -1);
+        aux.setQuantidade(aux.getQuantidade() -1);
+        nElementos = nElementos -2;
+        // remove os caracteres caso as suas quantidades sejam = 0
+        if(primeiroElemento.getQuantidade() == 0){
+            remover(primeiroElemento, anterior);
+        } 
+        if(aux.getQuantidade() == 0) {
+            remover(aux,anterior);
+        }
+    } else if (aux != null) {
+        anterior = aux;
+        buscador(aux.getProximoNodo(), anterior);
+    }
+    */
 
 
     /* 
