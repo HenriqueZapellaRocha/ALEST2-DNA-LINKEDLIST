@@ -6,7 +6,7 @@ import java.io.IOException;
 public class App {
     public static void main(String[] args) {
 
-        String filePath = "/Users/henriquezapellarocha/Documents/ALEST2-DNA-LINKEDLIST-main/casos-cohen/caso10000k.txt";
+        String filePath = "C:\\Users\\henri\\OneDrive\\Documentos\\ALEST2-DNA-LINKEDLIST-main\\casos-cohen\\caso30000k.txt";
         StringBuilder cadeia = new StringBuilder();
 
         try{

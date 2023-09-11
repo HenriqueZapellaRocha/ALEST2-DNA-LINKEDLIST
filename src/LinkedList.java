@@ -70,7 +70,13 @@ public class LinkedList {
     public void buscador(Nodo aux, Nodo anterior) {
 
 
-        for(int i =0; i < nElementos; i++) {
+        if((aux != null) && aux.getCaractere() == primeiroElemento.getCaractere()) {
+            primeiroElemento.setQuantidade(primeiroElemento.getQuantidade() + aux.getQuantidade());
+            aux = aux.getProximoNodo();
+            primeiroElemento.setProximoNodo(aux);
+        }
+
+  //      for(int i =0; i < nElementos; i++) {
               if((primeiroElemento != null && aux != null) && primeiroElemento.getCaractere() != aux.getCaractere() ) {
         //adiciona o caractere novo
         adicionar(fusao(this.primeiroElemento.getCaractere(), aux.getCaractere()));
@@ -85,13 +91,13 @@ public class LinkedList {
         if(aux.getQuantidade() == 0) {
             remover(aux,anterior);
         }
-        break;
-    } else if (aux != null) {
-        anterior = aux;
-        aux = aux.getProximoNodo();
+     //   break;
+   // } else if (aux != null) {
+   //     anterior = aux;
+   //     aux = aux.getProximoNodo();
     }
 
-        }
+ //       }
 
 
 
