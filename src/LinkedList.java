@@ -92,14 +92,16 @@ public class LinkedList {
         }
     }
 
+    // função que retorna a quantidade de de elementos na linkedlist
     public int nElementos() {
         return this.nElementos;
     }
 
+    // função que retorna um strinbuffer da linked list, ou seja, serve para ecsrever na tela a linkedlist 
     public StringBuffer escritor() {
         StringBuffer sb = new StringBuffer();
         Nodo aux = this.primeiroElemento;
-
+        // loop que passa pela linkedlist 
         for(int i =0; i< this.nElementos; i++) {
             if(aux != null) {
             for(int j =0; j < aux.getQuantidade(); j++) {
@@ -113,6 +115,8 @@ public class LinkedList {
         return sb;
     }
 
+    // apenas getters dos atributos da classe linkedlist
+    
     public int getnElementos() {
         return nElementos;
     }
