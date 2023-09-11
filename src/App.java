@@ -6,7 +6,7 @@ import java.io.IOException;
 public class App {
     public static void main(String[] args) {
 
-        String filePath = "C:\\Users\\henri\\OneDrive\\Documentos\\ALEST2-DNA-LINKEDLIST-main\\casos-cohen\\caso30000k.txt";
+        String filePath = "/Users/henriquezapellarocha/Documents/ALEST2-DNA-LINKEDLIST-main/casos-cohen/caso30000k.txt";
         StringBuilder cadeia = new StringBuilder();
 
         try{
@@ -25,7 +25,7 @@ public class App {
 
         LinkedList lista = new LinkedList();
 
-        long startTime = System.nanoTime();
+        double startTime = System.nanoTime();
 
     
         for(int i = 0; i < cadeia.length(); i++) {
@@ -39,12 +39,12 @@ public class App {
 
         int tam = lista.nElementos();
         for(int i =0; i < tam -1; i++) {
-            lista.buscador(lista.getPrimeiroElemento().getProximoNodo(), lista.getPrimeiroElemento());
+            lista.fusao(lista.getPrimeiroElemento().getProximoNodo(), lista.getPrimeiroElemento());
         }
 
         System.out.println(lista.escritor());
-        long endTime = System.nanoTime();
-        long timeElapsed = endTime - startTime;
+        double endTime = System.nanoTime();
+        double timeElapsed = endTime - startTime;
         System.out.println("Execution time in seconds: " + timeElapsed / 1000000000);
         
 
